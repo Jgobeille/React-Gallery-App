@@ -8,7 +8,6 @@ import Images from "./ImagesContainer";
 const App = () => {
   // console.log(this.state.gifs);
   return (
-    
     <div class="container">
       <SearchForm />
       <Nav />

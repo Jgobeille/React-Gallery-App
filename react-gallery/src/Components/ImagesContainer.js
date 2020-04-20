@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "./Image";
+import NoResults from "./NoResults";
 
 const Images = () => {
   //maps over the data and creates a gif component each time through the array
@@ -40,10 +41,7 @@ const Images = () => {
           />
         </li>
         {/* <!-- Not Found --> */}
-        <li class="not-found">
-          <h3>No Results Found</h3>
-          <p>You search did not return any results. Please try again.</p>
-        </li>
+        <NoResults />
       </ul>
     </div>
   );
