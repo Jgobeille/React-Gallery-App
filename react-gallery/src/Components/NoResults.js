@@ -1,6 +1,6 @@
 import React from "react";
 
-noResults = () => {
+const noResults = () => {
   return (
     <li class="not-found">
       <h3>No Results Found</h3>
@@ -8,3 +8,5 @@ noResults = () => {
     </li>
   );
 };
+
+export default noResults;
