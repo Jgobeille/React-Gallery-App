@@ -23,12 +23,12 @@ const Images = () => {
         if (results.length <= 0) {
           images = <NoResults />;
         } else {
-          images = results.map((image) => (
-            <Image
-              url={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`}
-              key={image.id}
-            />
-          ));
+          images = results.map(
+            (image) => (
+              (url = `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`),
+              (<Image url={url} key={image.id} />)
+            )
+          );
         }
 
         return context.loading ? (
