@@ -9,6 +9,7 @@ export class Provider extends Component {
     this.state = {
       images: [],
       loading: true,
+      searchText: '',
     };
   }
 
@@ -16,10 +17,10 @@ export class Provider extends Component {
     this.searchQuery();
   }
 
-  searchQuery = () => {
+  searchQuery = (input = 'cats') => {
     axios
       .get(
-        `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=sunset&per_page=24&page=1&format=json&nojsoncallback=1`
+        `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${input}&per_page=24&page=1&format=json&nojsoncallback=1`
       )
       .then((res) => {
         this.setState({
@@ -27,6 +28,10 @@ export class Provider extends Component {
           loading: false,
         });
       });
+  };
+
+  onSearchChange = (e) => {
+    this.setState({ searchText: e.target.value });
   };
 
   render() {
@@ -39,8 +44,10 @@ export class Provider extends Component {
         value={{
           images: this.state.images,
           loading: this.state.loading,
+          searchText: this.state.searchText,
           actions: {
             searchQuery: this.searchQuery,
+            onSearchChange: this.onSearchChange,
           },
         }}
       >

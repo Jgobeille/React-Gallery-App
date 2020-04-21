@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Image = ({ url }) => {
   return (
     <li>
-      <img src={url} alt="" />
+      <img src={url} alt=" " />
     </li>
   );
 };
