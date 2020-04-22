@@ -1,8 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import { Consumer } from './Context/index.js';
+import Images from './ImagesContainer';
 
 const nav = () => {
+  //creat array of options
+  //loop over the options
+  //pass th results
   return (
     <Consumer>
       {({ actions }) => {
@@ -25,6 +29,10 @@ const nav = () => {
                 </NavLink>
               </li>
             </ul>
+
+            <Route path="/cats" component={Images}></Route>
+            <Route path="/dogs" component={Images}></Route>
+            <Route path="/computers" component={Images}></Route>
           </nav>
         );
       }}

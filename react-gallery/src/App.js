@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router-dom';
 
 import './index.css';
 import SearchForm from './Components/SearchForm';
@@ -7,19 +7,20 @@ import Nav from './Components/Nav';
 import Images from './Components/ImagesContainer';
 
 const App = () => {
+  let history = useHistory();
+  console.log(history);
   return (
-    <BrowserRouter>
+    <Router>
       <div className="container">
-        <SearchForm />
+        <SearchForm history={history} />
         <Nav />
         <Switch>
           <Route exact path="/" component={Images} />
-          <Route exact path="/:id" component={Images} />
-          <Route path="/search/:topic" component={Images} />
+          <Route path="/search/:id" component={Images} />
           <Route path="/NotFound" />
         </Switch>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 };
 

@@ -4,8 +4,8 @@ import axios from 'axios';
 const ReactGalleryContext = React.createContext();
 
 export class Provider extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       images: [],
       loading: true,
@@ -17,7 +17,7 @@ export class Provider extends Component {
     this.searchQuery();
   }
 
-  searchQuery = (input = 'coffee') => {
+  searchQuery = (input) => {
     axios
       .get(
         `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${input}&per_page=24&page=1&format=json&nojsoncallback=1`

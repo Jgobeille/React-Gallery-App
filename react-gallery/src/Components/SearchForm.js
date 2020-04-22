@@ -6,15 +6,14 @@ import { Consumer } from './Context/index.js';
  * @component searchForm
  *
  */
-const searchForm = () => {
+const searchForm = (props) => {
+  console.log(props);
   //creates reference to input
   let input = React.createRef();
   return (
     <Consumer>
       {(context) => {
-        {
-          /* console.log(context); */
-        }
+        console.log(context);
         const handleSubmit = (e) => {
           e.preventDefault();
           context.actions.searchQuery(input.current.value);
@@ -22,7 +21,7 @@ const searchForm = () => {
           e.currentTarget.reset();
         };
         return (
-          <form className="search-form" onSubmit={handleSubmit}>
+          <form class="search-form" onSubmit={handleSubmit}>
             <input
               type="search"
               name="search"
@@ -31,7 +30,7 @@ const searchForm = () => {
               ref={input}
               required
             />
-            <button type="submit" className="search-button">
+            <button type="submit" class="search-button">
               <svg
                 fill="#fff"
                 height="24"
