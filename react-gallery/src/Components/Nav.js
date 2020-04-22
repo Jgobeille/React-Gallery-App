@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useParams, Switch, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const nav = () => {
   return (
@@ -15,10 +15,6 @@ const nav = () => {
           <NavLink to="/computers">Computers</NavLink>
         </li>
       </ul>
-
-      <Switch>
-        <Route path="/:id" />
-      </Switch>
     </nav>
   );
 };

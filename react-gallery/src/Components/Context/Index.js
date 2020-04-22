@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { useRouteMatch, useParams } from 'react-router-dom';
 import apiKey from '../../config.js';
 import axios from 'axios';
 const ReactGalleryContext = React.createContext();

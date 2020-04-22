@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, useParams } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import '../index.css';
 import SearchForm from './SearchForm';
@@ -13,7 +13,11 @@ const App = () => {
         <SearchForm />
         <Nav />
         <Images />
-        <Switch></Switch>
+        <Switch>
+          <Route path="/" />
+          <Route path="/search/:topic" />
+          <Route path="/NotFound" />
+        </Switch>
       </div>
     </BrowserRouter>
   );

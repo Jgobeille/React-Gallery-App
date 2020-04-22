@@ -17,6 +17,7 @@ const searchForm = () => {
         }
         const handleSubmit = (e) => {
           e.preventDefault();
+          console.log(context);
           let topic = input.current.value;
           context.actions.searchQuery(input.current.value);
           {
