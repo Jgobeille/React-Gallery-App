@@ -2,8 +2,8 @@ import React from 'react';
 import { Consumer } from './Context/index.js';
 
 /**
- * Search Form:
- *
+ * Search Form allow user to search for images
+ * @component searchForm
  *
  */
 const searchForm = () => {
@@ -12,11 +12,22 @@ const searchForm = () => {
   return (
     <Consumer>
       {(context) => {
-        console.log(context);
+        {
+          /* console.log(context); */
+        }
         const handleSubmit = (e) => {
           e.preventDefault();
+          let topic = input.current.value;
           context.actions.searchQuery(input.current.value);
-          console.log(input.current.value);
+          {
+            /* console.log(input.current.value); */
+          }
+          {
+            /* let path = `search/${topic}`; */
+          }
+          {
+            /* this.props.history.push(path); */
+          }
           e.currentTarget.reset();
         };
         return (
