@@ -17,7 +17,7 @@ export class Provider extends Component {
     this.searchQuery();
   }
 
-  searchQuery = (input = 'cats') => {
+  searchQuery = (input = 'coffee') => {
     axios
       .get(
         `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${input}&per_page=24&page=1&format=json&nojsoncallback=1`
@@ -29,7 +29,6 @@ export class Provider extends Component {
         });
       });
   };
-
   onSearchChange = (e) => {
     this.setState({ searchText: e.target.value });
   };

@@ -17,22 +17,12 @@ const searchForm = () => {
         }
         const handleSubmit = (e) => {
           e.preventDefault();
-          console.log(context);
-          let topic = input.current.value;
           context.actions.searchQuery(input.current.value);
-          {
-            /* console.log(input.current.value); */
-          }
-          {
-            /* let path = `search/${topic}`; */
-          }
-          {
-            /* this.props.history.push(path); */
-          }
+          console.log(input.current.value);
           e.currentTarget.reset();
         };
         return (
-          <form class="search-form" onSubmit={handleSubmit}>
+          <form className="search-form" onSubmit={handleSubmit}>
             <input
               type="search"
               name="search"
@@ -41,7 +31,7 @@ const searchForm = () => {
               ref={input}
               required
             />
-            <button type="submit" class="search-button">
+            <button type="submit" className="search-button">
               <svg
                 fill="#fff"
                 height="24"
