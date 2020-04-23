@@ -29,10 +29,6 @@ const nav = () => {
                 </NavLink>
               </li>
             </ul>
-
-            <Route path="/cats" component={Images}></Route>
-            <Route path="/dogs" component={Images}></Route>
-            <Route path="/computers" component={Images}></Route>
           </nav>
         );
       }}

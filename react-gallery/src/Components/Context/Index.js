@@ -9,15 +9,16 @@ export class Provider extends Component {
     this.state = {
       images: [],
       loading: true,
-      searchText: '',
+      input: localStorage.getItem('items') || 1,
     };
   }
 
   componentDidMount() {
-    this.searchQuery();
+    this.searchQuery(this.state.input);
   }
 
   searchQuery = (input) => {
+    localStorage.setItem('items', input);
     axios
       .get(
         `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${input}&per_page=24&page=1&format=json&nojsoncallback=1`
@@ -26,11 +27,9 @@ export class Provider extends Component {
         this.setState({
           images: res.data.photos.photo,
           loading: false,
+          input: input,
         });
       });
-  };
-  onSearchChange = (e) => {
-    this.setState({ searchText: e.target.value });
   };
 
   render() {
@@ -43,10 +42,9 @@ export class Provider extends Component {
         value={{
           images: this.state.images,
           loading: this.state.loading,
-          searchText: this.state.searchText,
+          input: this.state.input,
           actions: {
             searchQuery: this.searchQuery,
-            onSearchChange: this.onSearchChange,
           },
         }}
       >
