@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import { Consumer } from './Context/index.js';
-import Images from './ImagesContainer';
 
 const nav = () => {
   //creat array of options
