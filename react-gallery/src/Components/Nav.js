@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route, Redirect } from 'react-router-dom';
 import { Consumer } from './Context/index.js';
 
 const nav = () => {
@@ -8,7 +8,7 @@ const nav = () => {
   //pass th results
   return (
     <Consumer>
-      {({ actions }) => {
+      {({ actions, input }) => {
         return (
           <nav className="main-nav">
             <ul>
@@ -28,6 +28,7 @@ const nav = () => {
                 </NavLink>
               </li>
             </ul>
+            <Route exact path="/" render={() => <Redirect to={`/${input}`} />} />
           </nav>
         );
       }}

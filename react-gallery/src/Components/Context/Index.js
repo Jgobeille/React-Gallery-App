@@ -9,7 +9,7 @@ export class Provider extends Component {
     this.state = {
       images: [],
       loading: true,
-      input: localStorage.getItem('items') || 1,
+      input: localStorage.getItem('items') || 'cats',
     };
   }
 
@@ -18,6 +18,7 @@ export class Provider extends Component {
   }
 
   searchQuery = (input) => {
+    //sets current item to local Storage
     localStorage.setItem('items', input);
     axios
       .get(

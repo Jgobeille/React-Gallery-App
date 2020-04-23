@@ -11,7 +11,6 @@ const Images = () => {
         const results = images;
         let imagesVar;
         let url;
-        console.log(results.length);
 
         //maps over the data and creates a gif component each time through the array
         if (results.length <= 0) {
@@ -40,7 +39,7 @@ const Images = () => {
         } else {
           return (
             <div className="photo-container">
-              <h2 className="future">Results for {input}</h2>
+              <h2 className="future glow">Results for {input}</h2>
               <ul>{imagesVar}</ul>
             </div>
           );

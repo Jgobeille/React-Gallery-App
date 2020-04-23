@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, withRouter, Redirect } from 'react-router-dom';
 
 import './index.css';
 import SearchForm from './Components/SearchForm';
@@ -14,7 +14,6 @@ const App = (props) => {
         <SearchForm history={props} />
         <Nav />
         <Switch>
-          <Route exact path="/" component={Images} />
           <Route exact path="/cats" component={Images} />
           <Route exact path="/dogs" component={Images} />
           <Route exact path="/computers" component={Images} />
