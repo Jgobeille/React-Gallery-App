@@ -3,8 +3,8 @@ import React from 'react';
 const noResults = () => {
   return (
     <div className="not-found">
-      <h3>No Results Found</h3>
-      <p>You search did not return any results. Please try again.</p>
+      <h2 className="future">No Results Found</h2>
+      <h3>You search did not return any results. Please try again.</h3>
     </div>
   );
 };

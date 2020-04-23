@@ -1,8 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Mr+Dafoe);
+
 body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   color: #3f4850;
+  background: url(https://treehouseproject.s3.amazonaws.com/Unit+7+Project/12-124273_vaporwave-wallpaper-twitter-pink.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
 }
+
 
 h2 {
   font-size: 2em;
@@ -27,7 +37,7 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: #438bbd;
+  background-color: #01cdfe;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
@@ -37,9 +47,9 @@ a {
 input {
   font-size: 1em;
   width: 100%;
-  background-color: #edeff0;
+  background-color: #fffb96;
   padding: 10px 15px;
-  border: 3px solid #d7dbdf;
+  border: 3px solid #01cdfe;
   border-right: none;
   border-radius: 0.35em 0 0 0.35em;
   outline: none;
@@ -52,7 +62,7 @@ input {
 
 .main-nav a {
   display: block;
-  background: #438bbd;
+  background: #01cdfe;
   border-radius: 3px;
   padding: 5px;
   color: #fff;
@@ -61,7 +71,7 @@ input {
 .main-nav .active,
 .main-nav a:hover,
 .search-form button:hover {
-  background-color: #275270;
+  background-color: #b967ff;
 }
 
 .photo-container ul {
@@ -122,4 +132,81 @@ input {
     margin: 10px;
     width: 100px;
   }
+}
+
+/* Loader */
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+
+}
+
+.svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: rotate 2s linear infinite;
+}
+
+.svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 10;
+  stroke: #01cdfe;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+
+  0%,
+  100% {
+    stroke-dashoffset: 440;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  50.1% {
+    stroke-dashoffset: 880;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Letter font */
+.future {
+
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 70px;
+
+  color: #EB219B;
+  -webkit-text-fill-color: #b967ff;
+  text-shadow: -2px -2px 0 #FFBAF2;
+  -webkit-filter: drop-shadow(3px 3px 1px #441F62);
+  -webkit-transform: skew(-10deg, -10deg);
+  font-weight: normal;
+
+
+}
+
+li a {
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 24px;
 }

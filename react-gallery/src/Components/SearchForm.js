@@ -56,7 +56,7 @@ export default class SearchForm extends Component {
               <input
                 type="search"
                 name="search"
-                placeholder="Search"
+                placeholder="Search for your A E S T H E T I C..."
                 onChange={onSearchChange}
                 ref={input}
                 required
