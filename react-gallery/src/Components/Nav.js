@@ -1,14 +1,17 @@
 import React from 'react';
-import { NavLink, Route, Redirect } from 'react-router-dom';
+import { NavLink, Route, Redirect, Switch } from 'react-router-dom';
 import { Consumer } from './Context/index.js';
+import Images from './ImagesContainer';
+import PageNotFound from './PageNotFound';
 
-const nav = () => {
+const nav = (props) => {
+  console.log(props);
   //creat array of options
   //loop over the options
   //pass th results
   return (
     <Consumer>
-      {({ actions, input }) => {
+      {({ actions, images }) => {
         return (
           <nav className="main-nav">
             <ul>
@@ -28,7 +31,14 @@ const nav = () => {
                 </NavLink>
               </li>
             </ul>
-            <Route exact path="/" render={() => <Redirect to={`/${input}`} />} />
+            <Switch>
+              <Route exact path="/search/:id" render={() => <Images pics={images} />} />
+              <Route exact path="/cats" render={() => <Images pics={images} />} />
+              <Route exact path="/dogs" render={() => <Images pics={images} />} />
+              <Route exact path="/computers" render={() => <Images pics={images} />} />
+              <Route exact path="/" render={() => <Redirect to={'/cats'} />} />
+              <Route component={PageNotFound} />
+            </Switch>
           </nav>
         );
       }}

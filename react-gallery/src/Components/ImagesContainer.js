@@ -4,11 +4,12 @@ import { Consumer } from './Context/index.js';
 import NoResults from './NoResults';
 import Loader from './Loader';
 
-const Images = () => {
+const Images = (props) => {
+  console.log(props);
   return (
     <Consumer>
-      {({ images, loading, input }) => {
-        const results = images;
+      {({ loading, input }) => {
+        const results = props.pics;
         let imagesVar;
         let url;
 
@@ -19,7 +20,7 @@ const Images = () => {
           imagesVar = results.map(
             (image) => (
               //formats url
-              (url = `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}_c.jpg`),
+              (url = `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`),
               (<Image url={url} key={image.id} />)
             )
           );

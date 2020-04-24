@@ -39,9 +39,10 @@ export default class SearchForm extends Component {
             //changes url to blank
             this.props.history.history.replace('');
             let path = `search/${value}`;
+            console.log(path);
             //appends the path to the history
             this.props.history.history.push(path);
-            context.actions.searchQuery(this.state.searchText);
+            context.actions.searchQuery(value);
             e.currentTarget.reset();
           };
 
